@@ -7568,10 +7568,10 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
-golrang-design-system@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/golrang-design-system/-/golrang-design-system-0.0.5.tgz#fdfae187d80133ba3241f325bd8d72e54f359e99"
-  integrity sha512-oZVLnFWrD5n3ch0xZwWnBDdrDTGRSsNdiKptjIuJIZLhDOfC6m6ffZh5GIOVmRvf381MVSBfak6MihZNZEdWgA==
+golrang-design-system@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/golrang-design-system/-/golrang-design-system-0.0.6.tgz#06a76ce669f90ae4b328923f6ce051bd2d6b3064"
+  integrity sha512-AJebcJ/zW02FIW7Ow8X1N52BvZv9bQ4YcRUGfadhpa1FRXFzkkTc9Pfj2M87eB1u7p+I+pZ9lo7l+vPsKY/D+g==
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4, graceful-fs@^4.2.6, graceful-fs@^4.2.9:
   version "4.2.10"
