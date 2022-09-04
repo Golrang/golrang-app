@@ -1,44 +1,40 @@
-import { CheckBox, Form, Input, Select, TextArea } from "golrang-design-system";
-import * as yup from "yup";
-
-type TFormProps = {
-  name: string;
-  user: string;
-  age: number;
-  isHired: boolean;
-  company: number;
-};
-type TKeyOf = keyof TFormProps;
-
-type TSchema<T> = {
-  [P in keyof T]: any;
-};
-
-const schema = yup.object<TSchema<TFormProps>>({
-  name: yup.string().required(),
-  user: yup.string().required(),
-  age: yup.number().required(),
-  isHired: yup.boolean().required(),
-  company: yup.number().required(),
-});
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { QueryContext, QueryProvider } from "./QueryProvider";
+import { useQuery } from "./use-query";
+import { useQueryClient } from "./use-query-client";
 
 export const App = () => {
-  const onSubmit = (state: TFormProps) => console.log(state);
   return (
-    <Form<TFormProps>
-      className="  max-w-md mx-auto py-32"
-      {...{ onSubmit, schema }}
-    >
-      <Input<TKeyOf> label="Name" name="name" />
-      <Input<TKeyOf> label="Age" name="age" />
-      <TextArea<TKeyOf> label="User" name="user" />
-      <CheckBox<TKeyOf> label="Is Hired" name="isHired" />
-      <Select
-        label="Company"
-        name="company"
-        options={[{ label: "One", value: "1" }]}
-      />
-      <button type="submit">Submit</button>
-    </Form>
+    <QueryProvider>
+      <Child />
+      <Child2 />
+    </QueryProvider>
+  );
+};
+
+const Child = () => {
+  const { data, isLoading, error } = useQuery("first", () =>
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((res) => res)
+  );
+
+  return <div>test</div>;
+};
+
+const Child2 = () => {
+  const client = useQueryClient();
+  const data = client.getQueryData("first");
+
+  return (
+    <div>
+      <button onClick={() => client.invalidateQuery("first")}>Refetch</button>
+    </div>
   );
 };
