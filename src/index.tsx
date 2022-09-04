@@ -6,8 +6,4 @@ import "antd/dist/antd.css";
 import "golrang-design-system/dist/design.css";
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+root.render(<App />);
