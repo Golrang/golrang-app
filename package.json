@@ -10,6 +10,7 @@
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.33.1",
     "react-scripts": "5.0.1",
+    "uuid": "^9.0.0",
     "yup": "^0.32.11"
   },
   "scripts": {
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.2.2",
     "@storybook/addon-actions": "^6.5.8",
     "@storybook/addon-essentials": "^6.5.8",
     "@storybook/addon-interactions": "^6.5.8",
@@ -66,6 +68,7 @@
     "@types/node": "^16.11.39",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "@types/uuid": "^8.3.4",
     "autoprefixer": "^10.4.7",
     "babel-plugin-named-exports-order": "0.0.2",
     "postcss": "^8.4.14",
